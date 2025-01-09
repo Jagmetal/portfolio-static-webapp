@@ -1,0 +1,44 @@
+/* home.css */
+.home-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-container h1 {
+  font-size: 2rem; /* Adjust the font size as needed */
+  margin-bottom: 1.5rem; /* Add space between the header and the slideshow */
+  color: #DAA520 !important; /* Golden color with higher specificity */
+}
+
+p {
+  color: #DAA520; /* Golden color */
+  font-size: 1rem; /* Adjust the font size as needed */
+  line-height: 1.5; /* Improve readability */
+}
+
+.slideshow-container {
+  position: relative;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 900px;
+  height: 60vh; /* Adjust the height as needed */
+  max-height: 900px;
+  overflow: hidden;
+  margin: auto; /* Center the slideshow horizontally */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 6s ease-in-out; /* Smooth transition for fading effect */
+}
+
+.slide.active {
+  opacity: 1;
+}
