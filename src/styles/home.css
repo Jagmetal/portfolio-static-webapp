@@ -16,6 +16,7 @@ p {
   line-height: 1.5; /* Improve readability */
 }
 
+/* Add margin-top to move the slideshow down */
 .slideshow-container {
   position: relative;
   width: 80%; /* Adjust the width as needed */
@@ -23,7 +24,7 @@ p {
   height: 60vh; /* Adjust the height as needed */
   max-height: 900px;
   overflow: hidden;
-  margin: auto; /* Center the slideshow horizontally */
+  margin: 3rem auto 0; /* Add more top margin to push the slideshow down */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
