@@ -27,7 +27,7 @@ function Home() {
         Guitar Instructor & Audio Producer | Auckland NZ
       </p>
       <p>
-        With over 20 years of experience, I have honed my craft as a Guitar Instructor and Audio Producer in Auckland. My musical journey has led me to share stages with world-renowned extreme bands and self-produce tracks that have reached global audiences through prestigious labels.
+        With over 20 years of experience, I have honed my craft as a Guitarist and Audio Producer in Auckland. My musical journey has led me to share stages with world-renowned extreme bands and self-produce tracks that have reached global audiences through prestigious labels.
       </p>
       <p>
         My dual expertise as a guitarist and drummer, combined with my skills as an audio engineer, allows me to offer a progressive, dynamic approach to both teaching and production. I am passionate about helping my clients unlock their full potential, fueling their creativity, and guiding them toward their musical aspirations.
