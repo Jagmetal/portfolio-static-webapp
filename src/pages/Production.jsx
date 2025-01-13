@@ -76,7 +76,7 @@ function Production() {
       <div className="contact">
         <h2>Contact</h2>
         <p>Email: jagsingh@hotmail.co.nz</p>
-        <p>Phone: (123) 456-7890</p>
+        <p>Phone: (021) 068-7491</p>
       </div>
     </div>
   );
