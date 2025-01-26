@@ -26,6 +26,8 @@ body {
   height: 100vh; /* Full viewport height */
   overflow: hidden; /* Ensure no unwanted scrollbars */
   opacity: 0.999;
+  background-color: rgba(8, 8, 8, 0.486);
+  background-blend-mode: overlay;
 }
 
 /* Add semi-transparent overlay behind content */
