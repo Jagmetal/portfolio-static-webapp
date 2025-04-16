@@ -17,6 +17,7 @@ function Production() {
     '/images/studio10.JPG',
     '/images/studio11.JPG',
     '/images/studio12.JPG',
+    '/images/studio13.JPG',
   ];
 
   useEffect(() => {

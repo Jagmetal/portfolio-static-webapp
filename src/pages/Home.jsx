@@ -9,6 +9,7 @@ function Home() {
     '/images/j2.JPG',
     '/images/j3.JPG',
     '/images/j4.jpg',
+    '/images/j5.jpg',
     // Add more image paths as needed
   ];
 

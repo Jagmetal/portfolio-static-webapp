@@ -17,6 +17,8 @@ function Lessons() {
     '/images/live12.JPG',
     '/images/live13.JPG',
     '/images/live14.JPG',
+    '/images/live15.JPG',
+    '/images/live16.JPG',
   ];
 
   useEffect(() => {
@@ -88,9 +90,9 @@ function Lessons() {
       <div className="pricing">
         <h2>Pricing</h2>
         <ul>
-          <li>30 minutes: $40</li>
-          <li>45 minutes: $60</li>
-          <li>60 minutes: $80</li>
+          <li>30 minutes: $50</li>
+          <li>45 minutes: $80</li>
+          <li>60 minutes: $100</li>
         </ul>
       </div>
 
