@@ -2,25 +2,33 @@
 
 /* Global container styles */
 .production-container {
-    max-width: 1200px;  /* Matches the wider content layout */
+    max-width: 1200px;
+    /* Matches the wider content layout */
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
     width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in height */
+    box-sizing: border-box;
+    /* Ensure padding is included in height */
 }
 
 /* Ensure each section has proper spacing */
-.about, .experience, .skills, .contact, .slideshow {
+.about,
+.experience,
+.skills,
+.contact,
+.slideshow {
     margin-bottom: 2rem;
     width: 100%;
 }
 
 /* Scoped styles for Production page slideshow */
 .production-slideshow {
-    width: 90%; /* Allow the slideshow to take 90% of the screen width */
+    width: 90%;
+    /* Allow the slideshow to take 90% of the screen width */
     max-width: 1200px;
-    margin: 0 auto; /* Center the slideshow horizontally */
+    margin: 0 auto;
+    /* Center the slideshow horizontally */
 }
 
 .production-slideshow .slides {
@@ -28,11 +36,13 @@
     overflow-x: auto;
     gap: 1rem;
     padding: 1rem 0;
-    justify-content: center; /* Center the slideshow items */
+    justify-content: center;
+    /* Center the slideshow items */
 }
 
 .production-slideshow img {
-    width: 100%; /* Make the images fill the width of the container */
+    width: 100%;
+    /* Make the images fill the width of the container */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -40,15 +50,19 @@
 
 /* List styles for skills section */
 .skills ul {
-    list-style-type: disc; /* Use bullet points */
-    padding-left: 1.5rem; /* Indent for bullet points */
+    list-style-type: disc;
+    /* Use bullet points */
+    padding-left: 1.5rem;
+    /* Indent for bullet points */
     margin: 0;
 }
 
 .skills li {
     margin: 0.5rem 0;
-    padding-left: 0.5rem; /* Additional left padding for alignment */
-    color: goldenrod; /* Maintain the goldenrod color */
+    padding-left: 0.5rem;
+    /* Additional left padding for alignment */
+    color: goldenrod;
+    /* Maintain the goldenrod color */
     text-align: left;
 }
 
@@ -57,6 +71,33 @@
     margin: 0.5rem 0;
 }
 
+.portfolio {
+    margin-top: 3rem;
+    padding: 1rem;
+    background-color: transparent; /* Changed from #f3f3f3 to transparent */
+    text-align: center;
+}
+  
+  .embed-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .soundcloud-credit {
+    margin-top: 1rem;
+    font-size: 10px;
+    color: #999;
+  }
+  .soundcloud-credit a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 0.25rem;
+  }
+  
+
 /* Responsive design */
 @media (max-width: 768px) {
     .production-container {
@@ -64,7 +105,8 @@
     }
 
     .production-slideshow {
-        width: 100%; /* Slideshow takes full width on smaller screens */
+        width: 100%;
+        /* Slideshow takes full width on smaller screens */
         max-width: 100%;
     }
 
@@ -73,6 +115,7 @@
     }
 
     .skills li {
-        padding-left: 0.3rem; /* Adjusted padding for smaller screens */
+        padding-left: 0.3rem;
+        /* Adjusted padding for smaller screens */
     }
 }

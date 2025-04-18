@@ -17,7 +17,7 @@ function Production() {
     '/images/studio10.JPG',
     '/images/studio11.JPG',
     '/images/studio12.JPG',
-    '/images/studio13.JPG',
+    '/images/studio13.jpg',
   ];
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function Production() {
   return (
     <div className="production-container">
       <h1>Audio Production</h1>
-      
+
       {/* About Section */}
       <div className="about">
         <h2>About Me</h2>
@@ -50,14 +50,14 @@ function Production() {
 
       {/* Skills Section */}
       <h2>Skills & Expertise</h2>
-        <ul>
+      <ul>
         <li>Recording Techniques: Expertise in capturing live bands and instruments with high fidelity.</li>
-          <li>Mixing & Mastering: Proficient in blending tracks and finalizing audio for various formats.</li>
-          <li>Pro Tools Certified: Advanced proficiency in industry-standard DAW for recording and editing.</li>
-          <li>High-Quality Equipment: Access to professional-grade recording gear, amplifiers, and instruments.</li>
-          <li>Sound Design: Crafting unique soundscapes tailored to each project's needs.</li>
-          <li>Production: Guiding bands through the full production process from pre-production to mastering.</li>
-        </ul>
+        <li>Mixing & Mastering: Proficient in blending tracks and finalizing audio for various formats.</li>
+        <li>Pro Tools Certified: Advanced proficiency in industry-standard DAW for recording and editing.</li>
+        <li>High-Quality Equipment: Access to professional-grade recording gear, amplifiers, and instruments.</li>
+        <li>Sound Design: Crafting unique soundscapes tailored to each project's needs.</li>
+        <li>Production: Guiding bands through the full production process from pre-production to mastering.</li>
+      </ul>
 
       {/* Slideshow Section */}
       <div className="slideshow">
@@ -70,6 +70,53 @@ function Production() {
               style={{ backgroundImage: `url(${slide})` }}
             ></div>
           ))}
+        </div>
+      </div>
+
+      {/* Portfolio Section */}
+      <div className="portfolio">
+        <h2>Portfolio</h2>
+        <div className="embed-container">
+          {/* Bandcamp: Setentia */}
+          <iframe
+            style={{ border: 0, width: '350px', height: '470px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=1589746223/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+            seamless
+            title="Setentia - Darkness Transcend"
+          >
+            <a href="https://blood-music.bandcamp.com/album/darkness-transcend">
+              Darkness Transcend by Setentia
+            </a>
+          </iframe>
+
+          {/* Bandcamp: Slavedriver */}
+          <iframe
+            style={{ border: 0, width: '350px', height: '470px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=2924395443/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+            seamless
+            title="Slavedriver - Marauders of the Wasteland"
+          >
+            <a href="https://slavedriver666.bandcamp.com/album/marauders-of-the-wasteland">
+              Marauders Of The Wasteland by Slavedriver
+            </a>
+          </iframe>
+
+          {/* SoundCloud */}
+          <iframe
+            width="350"
+            height="300"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1928566670&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+            title="Jagmetal - SoundCloud"
+          ></iframe>
+        </div>
+        <div className="soundcloud-credit">
+          <small>
+            <a href="https://soundcloud.com/jagmetals" target="_blank" rel="noopener noreferrer">Jagmetal666</a> ·
+            <a href="https://soundcloud.com/jagmetals/jagmetal" target="_blank" rel="noopener noreferrer"> Jagmetal</a>
+          </small>
         </div>
       </div>
 
