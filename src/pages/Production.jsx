@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Production.css'; // Add your CSS styles here
+import '../styles/Production.css'; // Your CSS styles
 
 function Production() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    '/images/studio1.JPG', // Replace with your actual image paths
+    '/images/studio1.JPG',
     '/images/studio2.JPG',
     '/images/studio3.JPG',
     '/images/studio4.jpg',
@@ -23,9 +23,9 @@ function Production() {
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
-    return () => clearInterval(slideInterval); // Cleanup interval on component unmount
+    return () => clearInterval(slideInterval);
   }, [slides.length]);
 
   return (
@@ -101,7 +101,7 @@ function Production() {
             </a>
           </iframe>
 
-          {/* SoundCloud */}
+          {/* SoundCloud 1 */}
           <iframe
             width="350"
             height="300"
@@ -109,13 +109,25 @@ function Production() {
             frameBorder="no"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1928566670&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-            title="Jagmetal - SoundCloud"
+            title="Jagmetal - Jagmetal"
+          ></iframe>
+
+          {/* SoundCloud 2 (New Track You Asked For) */}
+          <iframe
+            width="350"
+            height="300"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2085873462&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+            title="Jagmetal - Suhr Reactive IR Test"
           ></iframe>
         </div>
+
         <div className="soundcloud-credit">
           <small>
             <a href="https://soundcloud.com/jagmetals" target="_blank" rel="noopener noreferrer">Jagmetal666</a> ·
-            <a href="https://soundcloud.com/jagmetals/jagmetal" target="_blank" rel="noopener noreferrer"> Jagmetal</a>
+            <a href="https://soundcloud.com/jagmetals/suhr-reactive-ir-test" target="_blank" rel="noopener noreferrer"> Suhr Reactive IR Test</a>
           </small>
         </div>
       </div>
