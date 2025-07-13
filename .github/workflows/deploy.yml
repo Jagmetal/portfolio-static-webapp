@@ -7,40 +7,43 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm ci
 
       - name: Build project
         run: npm run build
 
-      - name: Upload production-ready build files
+      - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: production-files
           path: ./dist
 
   deploy:
-    name: Deploy
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Download artifact
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: production-files
-          path: ./dist
+          # No path here, so it extracts to root
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
