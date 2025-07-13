@@ -3,22 +3,23 @@ import '../styles/Lessons.css'; // Add your CSS styles here
 
 function Lessons() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const basePath = import.meta.env.BASE_URL;
 
   const slides = [
-    '/images/live1.JPG', // Replace with your actual image paths
-    '/images/live2.JPG',
-    '/images/live3.JPG',
-    '/images/live4.JPG',
-    '/images/live5.JPG',
-    '/images/live6.JPG',
-    '/images/live7.JPG',
-    '/images/live10.JPG',
-    '/images/live11.JPG',
-    '/images/live12.JPG',
-    '/images/live13.JPG',
-    '/images/live14.JPG',
-    '/images/live15.JPG',
-    '/images/live16.JPG',
+    `${basePath}images/live1.JPG`,
+    `${basePath}images/live2.JPG`,
+    `${basePath}images/live3.JPG`,
+    `${basePath}images/live4.JPG`,
+    `${basePath}images/live5.JPG`,
+    `${basePath}images/live6.JPG`,
+    `${basePath}images/live7.JPG`,
+    `${basePath}images/live10.JPG`,
+    `${basePath}images/live11.JPG`,
+    `${basePath}images/live12.JPG`,
+    `${basePath}images/live13.JPG`,
+    `${basePath}images/live14.JPG`,
+    `${basePath}images/live15.JPG`,
+    `${basePath}images/live16.JPG`,
   ];
 
   useEffect(() => {

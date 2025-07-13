@@ -3,21 +3,22 @@ import '../styles/Production.css'; // Your CSS styles
 
 function Production() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const basePath = import.meta.env.BASE_URL;
 
   const slides = [
-    '/images/studio1.JPG',
-    '/images/studio2.JPG',
-    '/images/studio3.JPG',
-    '/images/studio4.jpg',
-    '/images/studio5.JPG',
-    '/images/studio6.JPG',
-    '/images/studio7.JPG',
-    '/images/studio8.JPG',
-    '/images/studio9.JPG',
-    '/images/studio10.JPG',
-    '/images/studio11.JPG',
-    '/images/studio12.JPG',
-    '/images/studio13.jpg',
+    `${basePath}images/studio1.JPG`,
+    `${basePath}images/studio2.JPG`,
+    `${basePath}images/studio3.JPG`,
+    `${basePath}images/studio4.jpg`,
+    `${basePath}images/studio5.JPG`,
+    `${basePath}images/studio6.JPG`,
+    `${basePath}images/studio7.JPG`,
+    `${basePath}images/studio8.JPG`,
+    `${basePath}images/studio9.JPG`,
+    `${basePath}images/studio10.JPG`,
+    `${basePath}images/studio11.JPG`,
+    `${basePath}images/studio12.JPG`,
+    `${basePath}images/studio13.jpg`,
   ];
 
   useEffect(() => {
@@ -156,3 +157,4 @@ function Production() {
 }
 
 export default Production;
+

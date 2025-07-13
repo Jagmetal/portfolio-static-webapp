@@ -13,7 +13,7 @@ import './styles/app.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-static-webapp">
       <nav>
         <Link to="/">Home</Link>
         <Link to="/lessons">Music Lessons</Link>
