@@ -42,8 +42,31 @@ function Home() {
           ></div>
         ))}
       </div>
+
+      <footer className="home-footer">
+        <div className="social-links">
+          <a
+            href="https://www.instagram.com/jag666/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.youtube.com/@jagmetal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube
+          </a>
+        </div>
+        <div className="footer-credit">
+          <small>© JagwinderSingh2025</small>
+        </div>
+      </footer>
     </div>
   );
 }
 
 export default Home;
+

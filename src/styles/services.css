@@ -1,0 +1,92 @@
+/* Main container for Services page */
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Each service section */
+  .service-section {
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+    width: 100%;
+    background-color: transparent;
+  }
+  
+  /* Section headings */
+  .service-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: goldenrod;
+    font-weight: 600;
+  }
+  
+  /* Paragraph text */
+  .service-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Unordered list styling */
+  .service-section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    text-align: left;
+    max-width: 800px;
+    margin: 1rem auto;
+  }
+  
+  .service-section li {
+    margin: 0.5rem 0;
+    padding-left: 0.5rem;
+    color: goldenrod;
+  }
+  
+  /* Contact section paragraph override to center text */
+  .service-section.contact-section p {
+    text-align: center;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    color: #ccc;
+  }
+  
+  /* Contact links */
+  .contact-section a {
+    color: #aaa;
+    text-decoration: none;
+  }
+  
+  .contact-section a:hover {
+    text-decoration: underline;
+    color: #fff;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .services-container {
+      padding: 1rem;
+    }
+  
+    .service-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .service-section p,
+    .service-section li {
+      font-size: 0.95rem;
+    }
+  
+    .service-section ul {
+      padding-left: 1rem;
+    }
+  }
+  

@@ -77,6 +77,19 @@ function Production() {
       <div className="portfolio">
         <h2>Portfolio</h2>
         <div className="embed-container">
+
+          {/* Bandcamp: Dredge */}
+          <iframe
+            style={{ border: 0, width: '350px', height: '470px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=493094345/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+            seamless
+            title="Dredge - In Lunacy... The Savage Dream"
+          >
+            <a href="https://dredgenzhc.bandcamp.com/album/in-lunacy-the-savage-dream">
+              In Lunacy... The Savage Dream by Dredge
+            </a>
+          </iframe>
+          
           {/* Bandcamp: Setentia */}
           <iframe
             style={{ border: 0, width: '350px', height: '470px' }}
@@ -112,7 +125,7 @@ function Production() {
             title="Jagmetal - Jagmetal"
           ></iframe>
 
-          {/* SoundCloud 2 (New Track You Asked For) */}
+          {/* SoundCloud 2 */}
           <iframe
             width="350"
             height="300"
