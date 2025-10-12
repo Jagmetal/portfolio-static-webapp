@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Lessons from './pages/Lessons';
 import Production from './pages/Production';
@@ -14,7 +14,7 @@ import './styles/app.css';
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/lessons">Music Lessons</Link>
@@ -22,14 +22,16 @@ export default function App() {
         <Link to="/services">Services</Link>
         <Link to="/web-development">Web Development</Link>
       </nav>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/lessons" element={<Lessons />} />
         <Route path="/audio-production" element={<Production />} />
         <Route path="/services" element={<Services />} />
         <Route path="/web-development" element={<Webdev />} />
+        {/* optional catch-all */}
         <Route path="*" element={<Home />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
