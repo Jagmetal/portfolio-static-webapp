@@ -1,153 +1,110 @@
-/* =====================
-   Global Styles
-===================== */
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-  width: 100%;
-  height: 100%;
-  background-color: #f4f4f4;
-  color: goldenrod;
-  overflow-x: hidden;
-  overflow-y: auto; /* allow scrolling */
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    height: 100%; /* Full height of the viewport */
+    background-color: #f4f4f4;
+    color: goldenrod; /* Set the font color to goldenrod for all text */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden;  /* Prevent body from scrolling */
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  min-height: 100%;
-}
-
-/* =====================
-   Layout / Structure
-===================== */
-.lessons-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.description, .slideshow, .pricing, .contact {
-  margin-bottom: 2rem;
-  width: 100%;
-}
-
-/* =====================
-   Typography & Colors
-===================== */
-h1, h2, p, ul, li {
-  color: goldenrod;
-}
-
-.pricing li {
-  color: black;
-}
-
-/* =====================
-   Slideshow Styles
-===================== */
-.slideshow {
-  position: relative;
-  z-index: 0;
-}
-
-.slideshow-container {
-  position: relative;
-  height: 420px;        /* ensures slideshow height */
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  z-index: 0;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-/* =====================
-   Pricing Styles
-===================== */
-.pricing {
-  position: relative;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.pricing ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pricing li {
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* =====================
-   Contact Styles
-===================== */
-.contact p {
-  margin: 0.5rem 0;
-}
-
-/* =====================
-   Responsive Design
-===================== */
-@media (max-width: 768px) {
-  .lessons-container {
-    padding: 1rem;
-  }
-
-  .slideshow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 300px;
-    max-width: 100%;
-  }
-
-  .pricing li {
-    padding: 0.3rem;
-  }
+    height: 100%; /* Ensure #root takes the full height of the viewport */
+    overflow-y: auto;  /* Allow scrolling within #root */
 }
 
-/* =====================
-   Debug / Safety Overrides
-   (Remove later once confirmed)
-===================== */
-.pricing {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+/* lessons.css */
+.lessons-container {
+    max-width: 1200px;  /* Increased max-width to 1200px for wider content */
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in height */
 }
 
-#PRICING_MARKER {
-  font-weight: 700;
-  color: #000;
-  background: #ff0;
-  padding: 6px 8px;
-  display: inline-block;
-  outline: 3px solid #f0a;
+/* Apply goldenrod color to all headers (h1, h2) and other text elements */
+h1, h2, p, ul, li {
+    color: goldenrod;
+}
+
+/* Override color for pricing section */
+.pricing li {
+    color: black; /* Set font color to black for pricing list items */
+}
+
+/* Ensure each section has proper spacing */
+.description, .slideshow, .pricing, .contact {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+/* Slideshow container adjustments for Lessons page */
+.lessons-container .slideshow .slides {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    justify-content: center;  /* Center the slideshow items */
+}
+
+.lessons-container .slideshow-container {
+    width: 90%; /* Allow the slideshow to take 90% of the screen width */
+    max-width: 1200px; /* Increased max-width */
+    margin: 0 auto; /* Center the slideshow horizontally */
+}
+
+.lessons-container .slideshow img {
+    width: 100%; /* Make the images fill the width of the container */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Pricing list styles */
+.pricing ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact information spacing */
+.contact p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .lessons-container {
+        padding: 1rem;
+    }
+
+    .lessons-container .slideshow-container {
+        width: 100%;  /* Slideshow takes full width on smaller screens */
+        max-width: 100%;
+    }
+
+    .lessons-container .slideshow .slides {
+        gap: 0.5rem;
+    }
+
+    .pricing li {
+        padding: 0.3rem;
+    }
 }
