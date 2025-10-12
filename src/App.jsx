@@ -29,7 +29,7 @@ export default function App() {
         <Route path="/audio-production" element={<Production />} />
         <Route path="/services" element={<Services />} />
         <Route path="/web-development" element={<Webdev />} />
-        {/* optional catch-all */}
+        {/* Optional catch-all */}
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>

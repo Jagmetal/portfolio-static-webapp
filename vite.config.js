@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio-static-webapp/',  // repo name
-  build: { outDir: 'dist' }
+  base: '/portfolio-static-webapp/',   // repo name
+  build: { outDir: 'dist' }            // standard build dir
 });

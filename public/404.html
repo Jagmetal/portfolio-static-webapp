@@ -5,10 +5,9 @@
     <title>Redirecting…</title>
     <script>
       (function(l) {
-        var repoBase = '/portfolio-static-webapp'; // <-- your repo (no trailing slash)
+        var repoBase = '/portfolio-static-webapp'; // your repo (no trailing slash)
         var path = l.pathname.startsWith(repoBase) ? l.pathname.slice(repoBase.length) : l.pathname;
         if (!path.startsWith('/')) path = '/' + path;
-        // Remember the original path, then send browser to index.html
         sessionStorage.setItem('gh-spa-redirect', path + l.search + l.hash);
         l.replace(repoBase + '/index.html');
       })(window.location);
