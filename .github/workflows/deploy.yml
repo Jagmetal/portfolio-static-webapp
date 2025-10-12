@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18       # ← back to what worked for you
+          node-version: 18
           cache: 'npm'
 
       - name: Install dependencies
@@ -23,20 +23,38 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # --- DIAGNOSTICS: prove where we are and what exists ---
-      - name: Show working dir and tree
+      # Diagnose & detect the actual build output directory
+      - name: Detect build output
+        id: detect
+        shell: bash
         run: |
-          pwd
-          ls -la
-          echo "---- dist ----"
-          if [ -d dist ]; then ls -la dist; else echo "NO dist DIRECTORY"; fi
+          echo "PWD: $(pwd)"
+          echo "--- top level ---"
+          ls -la || true
+          # Common Vite output dirs to check (add others if needed)
+          CANDIDATES=("dist" "build" "docs" "out" ".output/public")
+          FOUND=""
+          for d in "${CANDIDATES[@]}"; do
+            if [ -d "$d" ] && [ -n "$(ls -A "$d" 2>/dev/null || true)" ]; then
+              FOUND="$d"
+              break
+            fi
+          done
+          if [ -z "$FOUND" ]; then
+            echo "No known build output dir found (checked: ${CANDIDATES[*]})."
+            echo "Tree for context:" && find . -maxdepth 2 -type d -print
+            exit 1
+          fi
+          echo "BUILD_DIR=$FOUND" >> "$GITHUB_ENV"
+          echo "Detected build dir: $FOUND"
+          echo "Contents:" && ls -la "$FOUND"
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: production-files
-          path: dist                 # ← upload the folder (no glob)
-          if-no-files-found: error   # ← fail here if dist is missing
+          path: ${{ env.BUILD_DIR }}
+          if-no-files-found: error
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,11 +65,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production-files
-          path: dist                 # ← extract into ./dist
+          path: site    # place artifact in ./site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
+          publish_dir: ./site
