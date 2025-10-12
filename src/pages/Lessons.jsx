@@ -91,12 +91,14 @@ function Lessons() {
       {/* Pricing Section */}
       <div className="pricing">
         <h2>Pricing</h2>
+        <p id="PRICING_MARKER">PRICING MARKER</p> {/* TEMP marker */}
         <ul>
           <li>30 minutes: $50</li>
           <li>45 minutes: $80</li>
           <li>60 minutes: $100</li>
         </ul>
       </div>
+
 
       {/* Contact Details Section */}
       <div className="contact">

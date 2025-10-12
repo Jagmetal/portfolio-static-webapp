@@ -1,4 +1,6 @@
-/* Global Styles */
+/* =====================
+   Global Styles
+===================== */
 html, body {
   margin: 0;
   padding: 0;
@@ -8,9 +10,8 @@ html, body {
   height: 100%;
   background-color: #f4f4f4;
   color: goldenrod;
-  /* Let the page scroll normally */
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: auto; /* allow scrolling */
 }
 
 #root {
@@ -21,7 +22,9 @@ html, body {
   min-height: 100%;
 }
 
-/* Lessons container */
+/* =====================
+   Layout / Structure
+===================== */
 .lessons-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,25 +34,35 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Apply goldenrod color to all headers and text elements */
-h1, h2, p, ul, li {
-  color: goldenrod;
-}
-
-/* Section spacing */
 .description, .slideshow, .pricing, .contact {
   margin-bottom: 2rem;
   width: 100%;
 }
 
-/* ---------- Slideshow (background-image slides) ---------- */
-.slideshow { position: relative; }
+/* =====================
+   Typography & Colors
+===================== */
+h1, h2, p, ul, li {
+  color: goldenrod;
+}
+
+.pricing li {
+  color: black;
+}
+
+/* =====================
+   Slideshow Styles
+===================== */
+.slideshow {
+  position: relative;
+  z-index: 0;
+}
 
 .slideshow-container {
   position: relative;
-  height: 420px;            /* Ensure the slideshow has a visible height */
-  max-width: 1200px;
+  height: 420px;        /* ensures slideshow height */
   width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -61,14 +74,25 @@ h1, h2, p, ul, li {
   background-position: center;
   opacity: 0;
   transition: opacity 0.6s ease;
-  z-index: 0;               /* Keep slides under following sections */
+  z-index: 0;
 }
 
 .slide.active {
   opacity: 1;
 }
 
-/* ---------- Pricing ---------- */
+/* =====================
+   Pricing Styles
+===================== */
+.pricing {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .pricing ul {
   list-style-type: none;
   padding: 0;
@@ -80,18 +104,19 @@ h1, h2, p, ul, li {
   padding: 0.5rem;
   background: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  color: black;             /* Override global text color */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.pricing { position: relative; z-index: 1; }
-
-/* ---------- Contact ---------- */
+/* =====================
+   Contact Styles
+===================== */
 .contact p {
   margin: 0.5rem 0;
 }
 
-/* ---------- Responsive ---------- */
+/* =====================
+   Responsive Design
+===================== */
 @media (max-width: 768px) {
   .lessons-container {
     padding: 1rem;
@@ -99,11 +124,30 @@ h1, h2, p, ul, li {
 
   .slideshow-container {
     width: 100%;
-    height: 300px;          /* Slightly shorter on small screens */
+    height: 300px;
     max-width: 100%;
   }
 
   .pricing li {
     padding: 0.3rem;
   }
+}
+
+/* =====================
+   Debug / Safety Overrides
+   (Remove later once confirmed)
+===================== */
+.pricing {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#PRICING_MARKER {
+  font-weight: 700;
+  color: #000;
+  background: #ff0;
+  padding: 6px 8px;
+  display: inline-block;
+  outline: 3px solid #f0a;
 }
