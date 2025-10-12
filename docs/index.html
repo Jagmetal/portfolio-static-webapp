@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jag Singh</title>
 
-    <!-- Restore original route after 404.html redirects to index.html -->
+    <!-- Restore the FULL path (including /portfolio-static-webapp) after 404 redirect -->
     <script>
       (function () {
-        var k = 'gh-spa-redirect';
-        var saved = sessionStorage.getItem(k);
+        var KEY = 'gh-spa-redirect-full';
+        var saved = sessionStorage.getItem(KEY);
         if (saved) {
-          sessionStorage.removeItem(k);
-          history.replaceState(null, '', saved);
+          sessionStorage.removeItem(KEY);
+          var current = location.pathname + location.search + location.hash;
+          if (current !== saved) {
+            history.replaceState(null, '', saved);
+          }
         }
       })();
     </script>
@@ -22,6 +25,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Dev entry; Vite rewrites this for production build -->
+    <!-- Dev entry; Vite will rewrite this for production -->
   </body>
 </html>

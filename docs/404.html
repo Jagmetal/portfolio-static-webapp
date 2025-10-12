@@ -4,11 +4,15 @@
     <meta charset="utf-8" />
     <title>Redirecting…</title>
     <script>
-      (function(l) {
-        var repoBase = '/portfolio-static-webapp'; // your repo (no trailing slash)
-        var path = l.pathname.startsWith(repoBase) ? l.pathname.slice(repoBase.length) : l.pathname;
-        if (!path.startsWith('/')) path = '/' + path;
-        sessionStorage.setItem('gh-spa-redirect', path + l.search + l.hash);
+      (function (l) {
+        // Your repo base (no trailing slash)
+        var repoBase = '/portfolio-static-webapp';
+
+        // Save the FULL path (includes the repo base)
+        var full = l.pathname + l.search + l.hash;
+        sessionStorage.setItem('gh-spa-redirect-full', full);
+
+        // Send the browser to your index.html under the repo base
         l.replace(repoBase + '/index.html');
       })(window.location);
     </script>
