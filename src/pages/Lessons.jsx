@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Lessons.css'; // Add your CSS styles here
+import '../styles/Lessons.css';
 
 function Lessons() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,11 +23,10 @@ function Lessons() {
   ];
 
   useEffect(() => {
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(slideInterval); // Cleanup interval on component unmount
+    const id = setInterval(() => {
+      setCurrentSlide((s) => (s + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(id);
   }, [slides.length]);
 
   return (
@@ -38,18 +37,18 @@ function Lessons() {
       <div className="description">
         <h2>About Me</h2>
         <p>
-          With over 20 years of experience as a professional guitarist, I offer comprehensive and personalized guitar 
-          lessons designed to help students of all levels unlock their full musical potential. My journey spans over 
-          15 years of live performances across a multitude of genres, including punk, hardcore, metal, progressive 
-          and technical music. This diverse background enriches my teaching, providing students with a deep 
+          With over 20 years of experience as a professional guitarist, I offer comprehensive and personalized guitar
+          lessons designed to help students of all levels unlock their full musical potential. My journey spans over
+          15 years of live performances across a multitude of genres, including punk, hardcore, metal, progressive
+          and technical music. This diverse background enriches my teaching, providing students with a deep
           understanding of various styles and the technical skills required to master them.
         </p>
 
         <h2>My Approach</h2>
         <p>
-          I believe in a tailored approach to learning, where each lesson is customized to align with the student’s 
-          individual goals and aspirations. Whether you aim to master advanced guitar techniques, explore music theory, 
-          or develop your improvisation skills, I provide a supportive and dynamic learning environment that fosters 
+          I believe in a tailored approach to learning, where each lesson is customized to align with the student’s
+          individual goals and aspirations. Whether you aim to master advanced guitar techniques, explore music theory,
+          or develop your improvisation skills, I provide a supportive and dynamic learning environment that fosters
           growth and creativity.
         </p>
 
@@ -66,9 +65,9 @@ function Lessons() {
 
         <h2>Why Choose My Lessons?</h2>
         <p>
-          My lessons are not just about mastering the instrument but about cultivating a lifelong passion for music. 
-          I draw from a vast repertoire of genres and techniques, ensuring that each student gains a well-rounded musical 
-          education. My goal is to inspire and empower students to explore their creativity, develop their unique style, 
+          My lessons are not just about mastering the instrument but about cultivating a lifelong passion for music.
+          I draw from a vast repertoire of genres and techniques, ensuring that each student gains a well-rounded musical
+          education. My goal is to inspire and empower students to explore their creativity, develop their unique style,
           and achieve their musical dreams.
         </p>
       </div>
@@ -82,28 +81,28 @@ function Lessons() {
               key={index}
               className={`slide ${index === currentSlide ? 'active' : ''}`}
               style={{ backgroundImage: `url(${slide})` }}
-            ></div>
+              role="img"
+              aria-label={`Live performance photo ${index + 1}`}
+            />
           ))}
         </div>
       </div>
 
-{/* Pricing Section */}
-{
-<div className="pricing">
-  <h2>Pricing</h2>
-  <ul>
-    <li>30 minutes: $50</li>
-    <li>45 minutes: $80</li>
-    <li>60 minutes: $100</li>
-  </ul>
-</div>
-}
+      {/* Pricing Section */}
+      <div className="pricing">
+        <h2>Pricing</h2>
+        <ul>
+          <li>30 minutes: $50</li>
+          <li>45 minutes: $80</li>
+          <li>60 minutes: $100</li>
+        </ul>
+      </div>
 
       {/* Contact Details Section */}
       <div className="contact">
         <h2>Contact</h2>
-        <p>Email: jagsingh@hotmail.co.nz</p>
-        <p>Phone: (021) 068-7491</p>
+        <p>Email: <a href="mailto:jagsingh@hotmail.co.nz">jagsingh@hotmail.co.nz</a></p>
+        <p>Phone: <a href="tel:+64210687491">(021) 068-7491</a></p>
       </div>
     </div>
   );
