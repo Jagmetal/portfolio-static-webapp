@@ -87,8 +87,8 @@ function Lessons() {
         </div>
       </div>
 
-{/* Pricing Section */}
-{/*
+{Pricing Section}
+{
 <div className="pricing">
   <h2>Pricing</h2>
   <ul>
@@ -97,7 +97,7 @@ function Lessons() {
     <li>60 minutes: $100</li>
   </ul>
 </div>
-*/}
+}
 
       {/* Contact Details Section */}
       <div className="contact">
