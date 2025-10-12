@@ -31,7 +31,7 @@ function Home() {
         that have reached global audiences through prestigious labels.
       </p>
       <p>
-        My dual expertise as a guitarist and drummer, combined with my skills as an audio engineer, allows me
+        My expertise as a guitarist, drummer and composer, combined with my skills as an audio engineer, allows me
         to offer a progressive, dynamic approach to both teaching and production. I am passionate about helping
         my clients unlock their full potential, fueling their creativity, and guiding them toward their musical aspirations.
       </p>
