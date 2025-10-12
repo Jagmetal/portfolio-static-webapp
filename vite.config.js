@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: "/portfolio-static-webapp/",
+  base: '/portfolio-static-webapp/',  // repo name
   build: {
-    outDir: 'docs'  // change output directory from 'dist' to 'docs'
-  }
+    outDir: 'docs',                   // you're deploying from /docs
+  },
 });
