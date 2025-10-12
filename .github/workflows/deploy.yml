@@ -2,8 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
@@ -15,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18       # ← back to what worked for you
           cache: 'npm'
 
       - name: Install dependencies
@@ -24,12 +23,20 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # --- DIAGNOSTICS: prove where we are and what exists ---
+      - name: Show working dir and tree
+        run: |
+          pwd
+          ls -la
+          echo "---- dist ----"
+          if [ -d dist ]; then ls -la dist; else echo "NO dist DIRECTORY"; fi
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: production-files
-          path: dist/**             # <-- upload actual files
-          if-no-files-found: error  # <-- fail here if dist is empty
+          path: dist                 # ← upload the folder (no glob)
+          if-no-files-found: error   # ← fail here if dist is missing
 
   deploy:
     runs-on: ubuntu-latest
@@ -40,10 +47,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production-files
-          path: dist                # <-- extract into ./dist
+          path: dist                 # ← extract into ./dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
