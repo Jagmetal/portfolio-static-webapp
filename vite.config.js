@@ -1,10 +1,9 @@
+// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio-static-webapp/',  // repo name
-  build: {
-    outDir: 'docs',                   // you're deploying from /docs
-  },
+  base: '/portfolio-static-webapp/',
+  build: { outDir: 'dist' }
 });

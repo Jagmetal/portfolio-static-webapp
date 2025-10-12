@@ -12,7 +12,7 @@ import './styles/buttons.css';
 import './styles/responsive.css';
 import './styles/app.css';
 
-function App() {
+export default function App() {
   return (
     <Router>
       <nav>
@@ -22,18 +22,14 @@ function App() {
         <Link to="/services">Services</Link>
         <Link to="/web-development">Web Development</Link>
       </nav>
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/lessons" element={<Lessons />} />
         <Route path="/audio-production" element={<Production />} />
         <Route path="/services" element={<Services />} />
         <Route path="/web-development" element={<Webdev />} />
-        {/* optional catch-all to Home */}
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );
 }
-
-export default App;
