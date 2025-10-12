@@ -2,13 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/portfolio-static-webapp/images/j1.jpg" />
+    <link rel="icon" type="image/svg+xml" href="./images/j1.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jag Singh</title>
-    <script type="module" crossorigin src="/portfolio-static-webapp/assets/index-x9bSjXNj.js"></script>
+
+    <!-- Restore original route after 404.html redirects to index.html -->
+    <script>
+      (function () {
+        var k = 'gh-spa-redirect';
+        var saved = sessionStorage.getItem(k);
+        if (saved) {
+          sessionStorage.removeItem(k);
+          history.replaceState(null, '', saved);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/portfolio-static-webapp/assets/index-BbX1P5IB.js"></script>
     <link rel="stylesheet" crossorigin href="/portfolio-static-webapp/assets/index-MAr4mMDD.css">
   </head>
   <body>
     <div id="root"></div>
+    <!-- Dev entry; Vite rewrites this for production build -->
   </body>
 </html>
