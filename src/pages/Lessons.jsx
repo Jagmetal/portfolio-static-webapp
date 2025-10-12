@@ -82,28 +82,28 @@ function Lessons() {
               key={index}
               className={`slide ${index === currentSlide ? 'active' : ''}`}
               style={{ backgroundImage: `url(${slide})` }}
-            ></div>
+              role="img"
+              aria-label={`Live performance photo ${index + 1}`}
+            />
           ))}
         </div>
       </div>
 
-{Pricing Section}
-{
-<div className="pricing">
-  <h2>Pricing</h2>
-  <ul>
-    <li>30 minutes: $50</li>
-    <li>45 minutes: $80</li>
-    <li>60 minutes: $100</li>
-  </ul>
-</div>
-}
+      {/* Pricing Section */}
+      <div className="pricing">
+        <h2>Pricing</h2>
+        <ul>
+          <li>30 minutes: $50</li>
+          <li>45 minutes: $80</li>
+          <li>60 minutes: $100</li>
+        </ul>
+      </div>
 
       {/* Contact Details Section */}
       <div className="contact">
         <h2>Contact</h2>
-        <p>Email: jagsingh@hotmail.co.nz</p>
-        <p>Phone: (021) 068-7491</p>
+        <p>Email: <a href="mailto:jagsingh@hotmail.co.nz">jagsingh@hotmail.co.nz</a></p>
+        <p>Phone: <a href="tel:+64210687491">(021) 068-7491</a></p>
       </div>
     </div>
   );
