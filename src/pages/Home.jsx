@@ -24,18 +24,43 @@ function Home() {
   return (
     <div className="home-container">
       <h1>Bio:</h1>
+
       <p>Guitar Instructor & Audio Producer | Auckland NZ</p>
+
       <p>
         With over 20 years of experience, I have honed my craft as a Guitarist and Audio Producer in Auckland.
         My musical journey has led me to share stages with world-renowned extreme bands and self-produce tracks
         that have reached global audiences through prestigious labels.
       </p>
+
       <p>
         My expertise as a guitarist, drummer and composer, combined with my skills as an audio engineer, allows me
         to offer a progressive, dynamic approach to both teaching and production. I am passionate about helping
         my clients unlock their full potential, fueling their creativity, and guiding them toward their musical aspirations.
       </p>
 
+      {/* Schools Section */}
+      <section className="affiliations">
+        <h2>Schools that I proudly work with:</h2>
+        <p>
+          Bayfield Primary, Auckland Normal Intermediate, Remuera Intermediate, Stonefields School, Newton Primary, Ponsonby Primary, Lewis Eady and more.
+        </p>
+      </section>
+
+      {/* Google Reviews Section */}
+      <section className="reviews">
+        <p>
+          <a
+            href="https://share.google/0xNp2HxxKpiGiVsFt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google Reviews
+          </a>
+        </p>
+      </section>
+
+      {/* Slideshow */}
       <div className="slideshow-container">
         {slides.map((slide, index) => (
           <div
@@ -48,13 +73,22 @@ function Home() {
 
       <footer className="home-footer">
         <div className="social-links">
-          <a href="https://www.instagram.com/jag666/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/jag666/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Instagram
           </a>
-          <a href="https://www.youtube.com/@jagmetal" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.youtube.com/@jagmetal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             YouTube
           </a>
         </div>
+
         <div className="footer-credit">
           <small>© JagwinderSingh2025</small>
         </div>
@@ -64,5 +98,3 @@ function Home() {
 }
 
 export default Home;
-
-

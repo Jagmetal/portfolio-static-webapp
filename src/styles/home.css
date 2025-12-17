@@ -3,27 +3,56 @@
   padding: 2rem;
 }
 
+/* Headings */
 .home-container h1 {
-  font-size: 2rem; /* Adjust the font size as needed */
-  margin-bottom: 1.5rem; /* Add space between the header and the slideshow */
-  color: #DAA520 !important; /* Golden color with higher specificity */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #DAA520 !important;
 }
 
+.home-container h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.5rem;
+  color: #DAA520;
+}
+
+/* Paragraphs */
 p {
-  color: #DAA520; /* Golden color */
-  font-size: 1rem; /* Adjust the font size as needed */
-  line-height: 1.5; /* Improve readability */
+  color: #DAA520;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* Add margin-top to move the slideshow down */
+/* Schools & Reviews sections — explicitly transparent */
+.affiliations,
+.reviews {
+  background: transparent;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+/* Google review link */
+.reviews a {
+  color: #DAA520;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.reviews a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Slideshow */
 .slideshow-container {
   position: relative;
-  width: 80%; /* Adjust the width as needed */
+  width: 80%;
   max-width: 900px;
-  height: 60vh; /* Adjust the height as needed */
+  height: 60vh;
   max-height: 900px;
   overflow: hidden;
-  margin: 3rem auto 0; /* Add more top margin to push the slideshow down */
+  margin: 3rem auto 0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -36,18 +65,18 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 6s ease-in-out; /* Smooth transition for fading effect */
+  transition: opacity 6s ease-in-out;
 }
 
 .slide.active {
   opacity: 1;
 }
 
-/* Footer styling */
+/* Footer */
 .home-footer {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid #daa520aa; /* subtle golden divider */
+  border-top: 1px solid #daa520aa;
   color: #daa520;
   font-size: 0.9rem;
   text-align: center;
@@ -74,7 +103,6 @@ p {
 }
 
 .footer-credit small {
-  color: #daa520cc; /* lighter golden */
+  color: #daa520cc;
   font-style: italic;
 }
-
