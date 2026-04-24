@@ -82,7 +82,7 @@ export default function Home() {
       <section id="contact" className="cta">
         <h2>Book a Lesson</h2>
         <p>Limited availability. Enquire now.</p>
-        <a href="mailto:your@email.com" className="btn">
+        <a href="mailto:jagsingh@hotmail.co.nz" className="btn">
           Contact
         </a>
       </section>
