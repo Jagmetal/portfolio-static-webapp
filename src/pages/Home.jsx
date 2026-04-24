@@ -43,6 +43,10 @@ export default function Home() {
           <p className="hero-sub">
             Guitar • Drums • Composition • Production
           </p>
+
+          <p className="hero-sub">
+            20+ years of disciplined multi-instrumental training
+          </p>
         </div>
       </section>
 
@@ -50,16 +54,15 @@ export default function Home() {
       <div className="electric-line" />
 
       {/* ABOUT */}
-      <section>
-        <p>
-          Professional guitarist, drummer and audio producer with over 20 years of experience.
-          Focused on precision, rhythmic control and complete musicianship.
-        </p>
-      </section>
+<p>
+  Professional guitarist, drummer and audio producer focused on precision,
+  timing, and complete musicianship built through long-term disciplined
+  multi-instrumental training.
+</p>
 
-      {/* SCHOOLS */}
+      {/* TRUSTED BY */}
       <section>
-        <h2>Schools</h2>
+        <h2>Trusted by</h2>
         <p>
           Bayfield Primary, Auckland Normal Intermediate, Remuera Intermediate,
           Stonefields School, Newton Primary, Ponsonby Primary and more.
@@ -68,22 +71,25 @@ export default function Home() {
 
       {/* REVIEWS */}
       <section>
-        <h2>Reviews</h2>
+        <h2>Feedback</h2>
         <a
           href="https://share.google/0xNp2HxxKpiGiVsFt"
           target="_blank"
           rel="noopener noreferrer"
         >
-          View Google Reviews
+          See student and parent feedback
         </a>
       </section>
 
       {/* CTA */}
       <section id="contact" className="cta">
-        <h2>Book a Lesson</h2>
-        <p>Limited availability. Enquire now.</p>
-        <a href="mailto:jagsingh@hotmail.co.nz" className="btn">
-          Contact
+        <h2>Private Lessons</h2>
+        <p>Limited availability.</p>
+        <a
+          href="mailto:jagsingh@hotmail.co.nz?subject=Lesson Enquiry&body=Hi Jag,%0A%0AI’m interested in lessons.%0A%0AName:%0ALevel:%0AGoals:%0AAvailability:"
+          className="btn"
+        >
+          Enquire
         </a>
       </section>
 
