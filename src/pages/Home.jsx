@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/home.css';
 
-function Home() {
+export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const basePath = import.meta.env.BASE_URL;
 
@@ -14,87 +14,88 @@ function Home() {
   ];
 
   useEffect(() => {
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
-
-    return () => clearInterval(slideInterval);
+    return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
     <div className="home-container">
-      <h1>Bio:</h1>
 
-      <p>Guitar Instructor & Audio Producer | Auckland NZ</p>
-
-      <p>
-        With over 20 years of experience, I have honed my craft as a Guitarist and Audio Producer in Auckland.
-        My musical journey has led me to share stages with world-renowned extreme bands and self-produce tracks
-        that have reached global audiences through prestigious labels.
-      </p>
-
-      <p>
-        My expertise as a guitarist, drummer and composer, combined with my skills as an audio engineer, allows me
-        to offer a progressive, dynamic approach to both teaching and production. I am passionate about helping
-        my clients unlock their full potential, fueling their creativity, and guiding them toward their musical aspirations.
-      </p>
-
-      {/* Schools Section */}
-      <section className="affiliations">
-        <h2>Schools that I proudly work with:</h2>
-        <p>
-          Bayfield Primary, Auckland Normal Intermediate, Remuera Intermediate, Stonefields School, Newton Primary, Ponsonby Primary, Lewis Eady and more.
-        </p>
-      </section>
-
-      {/* Google Reviews Section */}
-      <section className="reviews">
-        <p>
-          <a
-            href="https://share.google/0xNp2HxxKpiGiVsFt"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Reviews
-          </a>
-        </p>
-      </section>
-
-      {/* Slideshow */}
-      <div className="slideshow-container">
+      {/* HERO */}
+      <section className="hero">
         {slides.map((slide, index) => (
           <div
             key={index}
             className={`slide ${index === currentSlide ? 'active' : ''}`}
             style={{ backgroundImage: `url(${slide})` }}
-          ></div>
+          />
         ))}
-      </div>
 
-      <footer className="home-footer">
-        <div className="social-links">
-          <a
-            href="https://www.instagram.com/jag666/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://www.youtube.com/@jagmetal"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            YouTube
-          </a>
-        </div>
+        <div className="hero-content">
+          <h1 className="hero-name">Jagwinder Singh</h1>
 
-        <div className="footer-credit">
-          <small>© JagwinderSingh2025</small>
+          <p className="hero-tag">
+            Precision. Control. Extreme Musicality.
+          </p>
+
+          <p className="hero-sub">
+            Guitar • Drums • Composition • Production
+          </p>
         </div>
+      </section>
+
+      {/* ELECTRIC DIVIDER */}
+      <div className="electric-line" />
+
+      {/* ABOUT */}
+      <section>
+        <p>
+          Professional guitarist, drummer and audio producer with over 20 years of experience.
+          Focused on precision, rhythmic control and complete musicianship.
+        </p>
+      </section>
+
+      {/* SCHOOLS */}
+      <section>
+        <h2>Schools</h2>
+        <p>
+          Bayfield Primary, Auckland Normal Intermediate, Remuera Intermediate,
+          Stonefields School, Newton Primary, Ponsonby Primary and more.
+        </p>
+      </section>
+
+      {/* REVIEWS */}
+      <section>
+        <h2>Reviews</h2>
+        <a
+          href="https://share.google/0xNp2HxxKpiGiVsFt"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Google Reviews
+        </a>
+      </section>
+
+      {/* CTA */}
+      <section id="contact" className="cta">
+        <h2>Book a Lesson</h2>
+        <p>Limited availability. Enquire now.</p>
+        <a href="mailto:your@email.com" className="btn">
+          Contact
+        </a>
+      </section>
+
+      {/* FOOTER */}
+      <footer>
+        <div className="socials">
+          <a href="https://www.instagram.com/jag666/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@jagmetal" target="_blank" rel="noreferrer">YouTube</a>
+        </div>
+        <small>© Jagwinder Singh</small>
       </footer>
+
     </div>
   );
 }
-
-export default Home;

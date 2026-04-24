@@ -5,11 +5,12 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write  # allow pushing back to the repo
+  contents: write
 
 jobs:
   build-and-publish-to-main-docs:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -28,15 +29,17 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Move build into docs/
+      - name: Clean and move build into docs/
         run: |
           rm -rf docs
-          mkdir -p docs
+          mkdir docs
           cp -r dist/* docs/
 
-      # Commit docs/ back to main (with [skip ci] to avoid loops)
+      - name: Add .nojekyll (IMPORTANT)
+        run: touch docs/.nojekyll
+
       - name: Commit and push docs
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "deploy: update docs [skip ci]"
-          file_pattern: docs/*
+          file_pattern: docs/**
